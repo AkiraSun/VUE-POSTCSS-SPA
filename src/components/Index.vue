@@ -1,7 +1,12 @@
 <template>
   <div class="index">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <div>{{ msg }}</div>
+    <div class="d1">
+
+    </div>
+    <div class="d2">
+
+    </div>
   </div>
 </template>
 
@@ -10,7 +15,7 @@ export default {
   name: 'index',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'indexindexindexindex'
     }
   }
 }
@@ -18,7 +23,17 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  h1 {
-    height: 50px;
+  .index {
+    text-align: center;
+  }
+  div {
+    height: 100px;
+    font-size: 50px;
+  }
+  .d1 {
+    height: 320px;
+  }
+  .d2 {
+    height: 91px;
   }
 </style>

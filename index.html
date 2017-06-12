@@ -7,7 +7,31 @@
     <meta name="format-detection" content="telephone=no email=no"/>
     <script src="https://g.alicdn.com/dingding/open-develop/1.0.0/dingtalk.js" charset="utf-8"></script>
     <title>dingtalk</title>
+    <script>
+      ;(function (doc, win) {
+        var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+            if (!docEl || !docEl.style || !doc || !doc.body || !doc.body.style) {
+              return
+            }
+            var clientWidth = docEl.clientWidth
+            if (!clientWidth) return
+            // 由屏幕宽度得到basefont大小,并将其写入html标签中,文档总的尺寸由rem确定
+            if (clientWidth > 750) {
+              clientWidth = 750
+            }
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px'
+            console.log('docEl.style.fontSize',docEl.style.fontSize)
+            doc.body.style.display = 'block'
+            doc.getElementsByTagName('html')[0].removeAttribute('class')
+          }
 
+        if (!doc.addEventListener) return
+        win.addEventListener(resizeEvt, recalc, false)
+        doc.addEventListener('DOMContentLoaded', recalc, false)
+      })(document, window)
+    </script>
   </head>
   <body>
     <div id="app"></div>

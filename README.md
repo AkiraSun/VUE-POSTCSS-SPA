@@ -1,4 +1,4 @@
-# vue0-spa
+# spa
 
 > A Vue.js project
 
